@@ -40,7 +40,6 @@ class AuthManager
 		}
 		catch (RequestException $requestException)
 		{
-			dd($requestException);
 			$ret->success = false;
 		}
 

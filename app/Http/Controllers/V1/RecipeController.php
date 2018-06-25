@@ -24,7 +24,7 @@ class RecipeController extends CRUDController
     {
         $rules = [
             'name' => 'required|min:2',
-            'source' => 'required|url',
+            'source' => 'someimtes|url',
             'preparation' => 'required|date_format:H:i',
             'instructions' => 'required|min:6|max:128',
             'ingredients' => 'required|min:1',
