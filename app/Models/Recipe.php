@@ -13,4 +13,13 @@ class Recipe extends Model
     {
         return $this->hasMany(Ingredient::class);
     }
+
+    protected static function boot()
+    {
+    	parent::boot();
+
+    	static::deleting(function($recipe) {
+    		$recipe->ingredients()->delete();
+    	});
+    }
 }

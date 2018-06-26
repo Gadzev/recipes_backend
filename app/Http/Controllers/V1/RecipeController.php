@@ -24,7 +24,7 @@ class RecipeController extends CRUDController
     {
         $rules = [
             'name' => 'required|min:2',
-            'source' => 'someimtes|url',
+            'source' => 'sometimes|url',
             'preparation' => 'required|date_format:H:i',
             'instructions' => 'required|min:6|max:128',
             'ingredients' => 'required|min:1',
@@ -51,5 +51,14 @@ class RecipeController extends CRUDController
         }
 
         return $this->respond($recipe->toarray(), [], Messages::RECIPE_CREATED, ResponseType::CREATED);
+    }
+
+    public function destroy(Request $request, int $id) : JsonResponse
+    {
+        $recipe = Recipe::findOrFail($id);
+
+        $recipe->delete();
+
+        return $this->respond(null, [], Messages::RECIPE_DELETED, ResponseType::NO_CONTENT);
     }
 }

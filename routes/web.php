@@ -24,5 +24,6 @@ $router->group(['prefix' => 'v1', 'namespace' => 'V1'], function($api) {
     $api->group(['as' => 'AuthRequired', 'middleware' => ['auth:api']], function($api) {
         $api->get('recipes', 'RecipeController@index');
         $api->post('recipes/create', 'RecipeController@store');
+        $api->delete('recipes/{id}', 'RecipeController@destroy');
     });
 });
