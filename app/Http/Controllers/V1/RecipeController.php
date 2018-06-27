@@ -20,6 +20,13 @@ class RecipeController extends CRUDController
         return $this->respond($recipes->toArray());
     }
 
+    public function show(Request $request, int $id) : JsonResponse
+    {
+        $recipe = Recipe::findOrFail($id);
+
+        return $this->respond($recipe->toArray());
+    }
+
     public function store(Request $request) : JsonResponse
     {
         $rules = [

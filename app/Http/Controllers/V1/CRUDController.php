@@ -28,7 +28,7 @@ class CRUDController extends V1Controller
         throw new NotSupportedException();
     }
 
-    public function show (Request $request, int $id, String $action = null) : JsonResponse
+    public function show (Request $request, int $id) : JsonResponse
     {
         throw new NotSupportedException();
     }
