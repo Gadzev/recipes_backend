@@ -1,0 +1,19 @@
+ip: 192.168.60.60
+memory: 2048
+cpus: 1
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: /Users/$YOUR_USERNAME/Projects/recipes_backend
+        to: /home/vagrant/code
+sites:
+    -
+        map: homestead.recipesapi
+        to: /home/vagrant/code/public
+databases:
+    - homestead
+name: recipes-backend
+hostname: recipes-backend
