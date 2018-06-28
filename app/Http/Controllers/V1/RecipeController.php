@@ -33,7 +33,7 @@ class RecipeController extends CRUDController
             'name' => 'required|min:2',
             'source' => 'sometimes|url',
             'preparation' => 'required|date_format:H:i',
-            'instructions' => 'required|min:6|max:128',
+            'instructions' => 'required|min:6|max:1024',
             'ingredients' => 'required|min:1',
             'ingredients.*.name' => [ 'required', Rule::in(Ingredients::getConstants()) ],
             'ingredients.*.quantity' => 'required|min:1'
