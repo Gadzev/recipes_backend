@@ -1,5 +1,7 @@
 # Recipes Backend
 
+The froentend for this app can be found [here](https://github.com/Gadzev/recipes_frontend)
+
 # Getting started
 
 ## Homestead Installation (recommended)
